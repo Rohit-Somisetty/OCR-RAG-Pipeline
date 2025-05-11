@@ -26,14 +26,10 @@ from PIL import Image
 import os
 import fitz
 import pandas as pd
-import matplotlib.pyplot as plt
-from IPython.display import Markdown, display
-import nest_asyncio
 from typing import List
-from llama_index import Document, BaseQueryEngine
+from llama_index import Document
 from llama_index.llms.gemini import Gemini
-from llama_index.core import Settings
-from llama_index.core import VectorStoreIndex
+from llama_index.core import Settings, VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.llms import ChatMessage
 from llama_index.core.prompts import ChatPromptTemplate

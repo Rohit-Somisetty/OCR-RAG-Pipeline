@@ -26,6 +26,8 @@ from PIL import Image
 import os
 import fitz
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 # from IPython.display import Markdown, display  # Not script compatible
 import nest_asyncio
@@ -34,7 +36,8 @@ from typing import List
 from llama_index.schema import Document
 import google.generativeai as genai
 from llama_index.llms import OpenAI  # We'll use this as a fallback
-from llama_index import Settings, VectorStoreIndex
+from llama_index import VectorStoreIndex
+from llama_index.core import Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms import ChatMessage
 from llama_index.prompts import ChatPromptTemplate

@@ -32,7 +32,8 @@ import nest_asyncio
 # from google.colab import files  # Not script compatible
 from typing import List
 from llama_index.schema import Document
-from llama_index.llms.gemini import Gemini
+import google.generativeai as genai
+from llama_index.llms import OpenAI  # We'll use this as a fallback
 from llama_index import Settings, VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.llms import ChatMessage
@@ -377,11 +378,12 @@ custom_prompt = ChatPromptTemplate.from_messages([
 ])
 
 # Initialize the Gemini LLM
-llm = Gemini(
-    model="models/gemini-2.0-flash",
-    prompt=custom_prompt,
-    max_output_tokens=1024  # Adjust based on your use case
-)
+# Configure Gemini
+genai.configure(api_key=GOOGLE_API_KEY)
+model = genai.GenerativeModel('gemini-pro')
+
+# Initialize the LLM (using OpenAI as fallback if Gemini fails)
+llm = OpenAI(model="gpt-3.5-turbo", temperature=0.1)
 
 # Initialize the HuggingFace embedding model
 embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")  # or "intfloat/e5-base-v2"

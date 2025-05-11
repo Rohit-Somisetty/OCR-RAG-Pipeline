@@ -29,9 +29,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import Markdown, display
 import nest_asyncio
-from llama_index.core import Document
 from typing import List
-from llama_index.core.schema import Document, TextNode
+from llama_index import Document, BaseQueryEngine
 from llama_index.llms.gemini import Gemini
 from llama_index.core import Settings
 from llama_index.core import VectorStoreIndex

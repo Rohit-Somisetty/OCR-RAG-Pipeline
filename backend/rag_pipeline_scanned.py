@@ -33,11 +33,9 @@ from llama_index.core import Settings, VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.llms import ChatMessage
 from llama_index.core.prompts import ChatPromptTemplate
-from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.postprocessor import SentenceTransformerRerank
 from llama_index.retrievers.bm25 import BM25Retriever
-from llama_index.core.retrievers import BaseRetriever
-from llama_index.core.schema import NodeWithScore, QueryBundle
+from llama_index.core.schema import Document, TextNode, QueryBundle
 from llama_index.core.retrievers import QueryFusionRetriever
 from llama_index.core.vector_stores import MetadataFilters, ExactMatchFilter
 from llama_index.core.text_splitter import SentenceSplitter

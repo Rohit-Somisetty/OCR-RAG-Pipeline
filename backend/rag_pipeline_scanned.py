@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 import nest_asyncio
 # from google.colab import files  # Not script compatible
 from typing import List
-from llama_index.core.schema import Document
+from llama_index.schema import Document
 from llama_index.llms.gemini import Gemini
 from llama_index import Settings, VectorStoreIndex
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding

@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 import nest_asyncio
 # from google.colab import files  # Not script compatible
 from typing import List
-from llama_index import Document
+from llama_index.core.schema import Document
 from llama_index.llms.gemini import Gemini
 from llama_index.core import Settings
 from llama_index.core import VectorStoreIndex
@@ -40,7 +40,7 @@ from llama_index.llms import ChatMessage
 from llama_index.prompts import ChatPromptTemplate
 from llama_index.postprocessors import SentenceTransformerRerank
 from llama_index.retrievers import BM25Retriever
-from llama_index.schema import NodeWithScore, QueryBundle, Document, TextNode
+from llama_index.schema import NodeWithScore, QueryBundle, TextNode
 from llama_index.retrievers import BaseRetriever
 from llama_index.vector_stores import MetadataFilters, ExactMatchFilter
 from llama_index.text_splitter import SentenceSplitter
